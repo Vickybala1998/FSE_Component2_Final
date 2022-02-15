@@ -1,0 +1,101 @@
+.card
+{
+    margin-left:2%;
+    margin-top:20px;
+    width:70%;
+    background-color: rgb(236, 234, 234);
+}
+.userid
+{
+    font-size:18px;
+    font-weight: bold;
+    color:#00ACEE
+}
+.date
+{
+    font-size: 12px;
+    font-weight: normal;
+    color:black
+}
+.reply
+{
+   width: 100%;
+   border-bottom: rgb(197, 196, 196) solid 0.5px;
+   border-top: none;
+   border-left: none;
+   border-right:none;
+   outline: none;
+   background-color: transparent;
+}
+.button
+{
+    border-radius: 50%;
+    background-color:white;
+    color:Red;
+    border:#00ACEE 1px;
+    outline: none;
+    font-size: 20px;
+}
+
+.searchbox
+{
+    margin-left: 3%;
+    width:200px;
+    border-radius: 10px;
+    border-color: black;
+    outline:none;
+    cursor: pointer;
+}
+.row
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.column1
+{ 
+    width: 20%;
+    height: 100%;
+}
+.column2
+{
+    width: 80%;
+    height: 100%;
+}
+.postTweet
+{
+    margin-left: 20%;
+    width: 60%;
+    height: 100px;
+    box-sizing: content-box;
+    outline: none;
+}
+.Post
+{
+    color:white;
+    margin-left: 2%;
+    width: 100px;
+    background-color:#00ACEE;
+    border-radius: 2em;
+    border:#00ACEE 1px;
+
+}
+.editdelete
+{
+   margin-left: 400px;
+}
+.replybutton{
+    background-color: #00ACEE;
+    color: white;
+    border-radius: 50%;
+    outline: none;
+    border:#00ACEE 1px;
+    font-size: 20px;
+}
+.replymessage
+{
+    background-color: white;
+    width:80%;
+    margin-left: 2%;
+    margin-right: 2%;
+}

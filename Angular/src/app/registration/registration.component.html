@@ -1,0 +1,96 @@
+<div class="row">
+  <mdb-card class="card">
+    <mdb-card-header class="info-color white-text text-center py-3">
+        <h5 style="font-size: 30px;">Sign up</h5>
+    </mdb-card-header>
+
+    <mdb-card-body class="px-lg-5 pt-0">
+        <form [formGroup]="newUser" (ngSubmit)="submitForm()" class="text-center" style="color:#757575;">
+          <div class="form-row">
+              <div class="col">
+                  <div class="md-form">
+                      <input type="text" class="form-control" formControlName="First_Name" mdbInput>
+                      <label>First Name</label>
+                      <div *ngIf="newUser.controls['First_Name'].errors?.['required'] &&(newUser.controls['First_Name'].dirty||
+                        newUser.controls['First_Name'].touched)" class="invalid">
+                        Firstname is required
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="md-form">
+                      <input type="text" class="form-control" formControlName="Last_Name" mdbInput>
+                      <label>Last Name</label>
+                      <div *ngIf="newUser.controls['Last_Name'].errors?.['required'] &&(newUser.controls['Last_Name'].dirty||
+                        newUser.controls['Last_Name'].touched)" class="invalid">
+                        Lastname is required
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="md-form mt-0"> 
+              <input type="text" class="form-control" formControlName="Login_Id" mdbInput>
+              <label>@Loginid</label>
+              <div *ngIf="newUser.controls['Login_Id'].errors?.['required'] &&(newUser.controls['Login_Id'].dirty||
+                        newUser.controls['Login_Id'].touched)" class="invalid">
+                        Loginid is required
+                </div>
+                <div *ngIf="newUser.controls['Login_Id'].errors?.['pattern']" class="invalid">
+                        Enter with "@"
+                </div>
+                
+          </div>
+          <div class="md-form mt-0">
+              <input type="email" class="form-control" formControlName="Email" mdbInput>
+              <label>Email</label>
+              <div *ngIf="newUser.controls['Email'].errors?.['required'] &&(newUser.controls['Email'].dirty||
+                        newUser.controls['Email'].touched)" class="invalid">
+                        Email is required
+               </div>
+               <div *ngIf="newUser.controls['Email'].errors?.['email']" class="invalid">
+                    Invalid email address
+               </div>
+          </div>
+          <div class="md-form">
+            <input type="text" class="form-control" formControlName="Contact_No" mdbInput>
+            <label>Phone</label>
+            <div *ngIf="newUser.controls['Contact_No'].errors?.['required'] &&(newUser.controls['Contact_No'].dirty||
+                      newUser.controls['Contact_No'].touched)" class="invalid">
+                      Phonenumber is required
+            </div>
+            <div *ngIf="newUser.controls['Contact_No'].errors?.['pattern']" class="invalid">
+                Invalid phonenumber
+            </div>
+        </div>
+          <div class="md-form">
+              <input type="password" formControlName="Password" class="form-control" mdbInput>
+              <label>password</label>
+              <div *ngIf="newUser.controls['Password'].errors?.['required'] &&(newUser.controls['Password'].dirty||
+                        newUser.controls['Password'].touched)" class="invalid">
+                        Password is required
+             </div>
+             <div *ngIf="newUser.controls['Password'].errors?.['pattern']" class="invalid">
+                password should match with condition
+             </div>
+          </div>
+          <div class="md-form">
+            <input type="password" formControlName="conPassword"  class="form-control" mdbInput>
+            <label>confirm password</label>
+            <div *ngIf="newUser.controls['conPassword'].errors?.['required']&&(newUser.controls['conPassword'].dirty||
+            newUser.controls['conPassword'].touched)" class="invalid">
+                 confirm password is required
+            </div>
+                <div *ngIf="!ispassMatch" class="invalid">
+                    password is mismatch
+                </div>   
+        </div>
+          <button class="fa fa-sign-up button"
+          type="submit">
+            Sign in</button><br>
+        </form>
+        <div>
+            <a routerLink="/home" style="color: #00ACEE;margin-left:370px">back</a>
+        </div>
+    </mdb-card-body>
+  </mdb-card>
+</div>

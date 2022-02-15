@@ -1,0 +1,31 @@
+<form class="search" [formGroup]="searchuser" (ngSubmit)="searchByUser()">
+    <div class="md-form mt-0">
+        <input type="email" class="form-control" formControlName="searchinput" mdbInput >
+        <label>Search</label>
+    </div>
+    </form>
+   
+<table class='table table-bordered usertable'>
+    <thead class='thead-dark'>
+    <tr>
+        <th>FullName</th>
+        <th>UserId</th>
+        <th>MailAddress</th>
+        <th>PhoneNumber</th>
+    </tr>
+    </thead>
+    <tr *ngFor='let user of allUsers'>
+        <td >
+            {{user.first_Name+" "+user.last_Name}}
+        </td>
+        <td>
+            {{user.login_id}}
+        </td>
+        <td>
+            {{user.email}}
+        </td>
+        <td>
+            {{user.contact_No}}
+        </td>
+    </tr>
+</table>

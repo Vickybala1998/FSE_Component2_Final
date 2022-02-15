@@ -1,0 +1,13 @@
+<div class="navcontainer">
+    <img src='/assets/img/tweetapplogo.png' class="img">
+     <nav class="navbar">
+         <a (click)="logIn()">Login</a>
+         <a routerLink="/Register">Register</a>
+         <a routerLink="/Tweet">Tweets</a>
+         <a *ngIf="isAllUersEnable" routerLink="/AllUsers">All Users</a>
+         <a (click)="logoff()">Logout</a>
+         <div *ngIf="isLoggedIn"  class="userid">
+             <p >Welocme <span style="color:black">{{loggedUser}}</span></p>
+         </div>
+     </nav>
+ </div>

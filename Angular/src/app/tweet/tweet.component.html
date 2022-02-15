@@ -1,0 +1,62 @@
+<form [formGroup]="newTweet">
+    <textarea class="postTweet" *ngIf="!isEdit" placeholder="type a tweet" maxlength="144" formControlName="Message" [(ngModel)]="Tweetmessage"></textarea>
+    <button type="submit" class="Post" *ngIf="!isEdit" (click)="postTweet()">Post</button>
+    <textarea class="postTweet" *ngIf="isEdit" placeholder="type a tweet" maxlength="144" formControlName="Message" [(ngModel)]="Tweetmessage"></textarea>
+    <button type="submit" class="Post" *ngIf="isEdit" (click)="updateTweet()">Update</button>
+</form>
+<div class="row">
+    <div class="column1">
+        <form class="formsearch" [formGroup]="Tweetsearch" (ngSubmit)="searchByUser()">
+            <input  class="searchbox" type="text" placeholder="Search" formControlName="searchInput">
+          </form>
+    </div>
+    <div class="column2">
+        <form [formGroup]="tweet">
+            <mdb-card *ngFor='let tweet of tweets' class="card">
+                <mdb-card-body>
+                    <div>
+                        <p class="userid">
+                            <span>{{tweet.user_Name}}</span>
+                            <span class="date"> {{tweet.posted_On}}</span>
+                        <span *ngIf="checkSameUser(tweet.user_Name)" class="editdelete">
+                            <button (click)="openEditor(tweet.message,tweet.id)" class="fa fa-edit button edit"></button>
+                            <button (click)="deleteTweet(tweet.id)" class="fa fa-trash-o button delete"></button>
+                        </span>
+                    </p>
+                    </div>
+                    <p id="message" [innerHTML]="tweet.message | hmColor:'#0000FF'"></p>
+                    <div>
+                        <button class="fa fa-thumbs-up button" [disabled]="!isLoggedIn" (click)="likeTweet(tweet.id,1)"></button>
+                        <button class="fa fa-thumbs-down button" [disabled]="!isLoggedIn" (click)="likeTweet(tweet.id,-1)"></button>
+                    </div>
+                    <div>
+                        <p>
+                            <span *ngIf="checkLikesCount(tweet.no_of_Likes)">{{tweet.no_of_Likes}}Likes</span>
+                            <span *ngIf="checkDisLikesCount(tweet.no_of_DisLikes)"> {{tweet.no_of_DisLikes}}Dislikes</span>
+                          </p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="column2">
+                                <input type="text" class="form-control" placeholder="reply" formControlName="Reply_Message" class="reply" maxlength="144">
+                        </div>
+                        <div class="column1"> 
+                            <button class="fa fa-send-o replybutton" [disabled]="!isLoggedIn" (click)="replyTweet(tweet.id)"></button>
+                        </div>
+                    </div><br>
+                    <div *ngFor='let reply of tweet.repliesList' class="replymessage">
+                        <div>
+                            <p class="userid">{{reply.User_Name}}
+                             <span class="date">{{reply.Posted_On}}</span>
+                            </p>
+                        </div> 
+                        <div>
+                            <p [innerHTML]="reply.Reply_Message | hmColor:'#0000FF'"></p>
+                        </div>
+                    </div>
+                </mdb-card-body>
+            </mdb-card>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+<div class='container'>
+    <mdb-card class="card">
+        <mdb-card-header class="info-color white-text text-center">
+            <h5 style="font-size: 20px;">Log in</h5>
+        </mdb-card-header><br>
+      
+        <mdb-card-body class="px-lg-5 pt-2">
+            <form [formGroup]="loginuser" class="text-center" style="color:#757575;" (ngSubmit)="loginForm()">
+              <div class="md-form mt-0">
+                  <input type="email" class="form-control" formControlName="Login_id" [required] mdbInput >
+                  <label>user name</label>
+                  <div *ngIf="loginuser.controls['Login_id'].errors?.['required'] &&(loginuser.controls['Login_id'].dirty||
+                        loginuser.controls['Login_id'].touched)" class="invalid">
+                        username is required
+              </div>
+              </div>
+              
+              <div class="md-form">
+                  <input type="password"  class="form-control" formControlName="Password" mdbInput>
+                  <label>password</label>
+                  <div *ngIf="loginuser.controls['Password'].errors?.['required'] &&(loginuser.controls['Password'].dirty||
+                        loginuser.controls['Password'].touched)" class="invalid">
+                        password is required
+              </div>
+              </div><br>
+              <button  class="fa fa-sign-in button" [disabled]="loginuser.invalid"
+              type="submit">Log in</button><br><br>
+              <div>
+                  <a style="color: #00ACEE" routerLink="/ForgotPassword">Forgot Password?</a>
+              </div><br>
+              <div>
+               <p>Not a member?<span><a style="color: #00ACEE" routerLink="/Register" >Register</a>
+                </span></p> 
+            </div>
+            </form>
+        </mdb-card-body>
+      </mdb-card>
+</div>

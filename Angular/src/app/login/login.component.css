@@ -1,0 +1,50 @@
+.card{
+    width:400px;
+    margin-left: 35%;
+    margin-bottom: 30px;
+}
+.button
+{
+    width:200px;
+    height: 30px;;
+    border-radius: 20px;
+    border-width: thin;
+    border-color:#00ACEE;
+    background-color:#00ACEE;
+    color:white;
+    font-size: 15px;
+}
+
+.row
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.column1
+{ 
+    background-color:#00ACEE;
+    width: 55%;
+    height: 100%;
+}
+.column2
+{
+    width: 45%;
+    height: 100%;
+}
+
+.startpage
+{
+    color:white;
+    font-size: 50px;
+    font-family:fantasy;
+    margin-top: 6em;
+    text-align: center;
+}
+
+.invalid
+{
+    color:red;
+    text-align: left;
+    font-size: 12px;
+}
