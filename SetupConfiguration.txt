@@ -1,0 +1,29 @@
+logstash url: http://localhost:28080/
+elasticsearch url: http://localhost:9200/
+kibana url: http://localhost:5601/app/home/
+
+#config Kafka
+cd "filelocation"
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+	
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+.\bin\kafka-topics.sh --create --topic tweet --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
+	
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+#config elasticsearch
+cd "filelocation"
+.\bin\elasticsearch.bat
+
+#config logstash
+cd "filelocation"
+.\bin\logstash.bat -f C:\ELK\logstash\config\testlogs.conf
+
+#config Kibana
+cd "filelocation"
+.\bin\kibana.bat
+
+#check status urls:
+curl http://localhost:9200/_cluster/health?pretty
+curl http://localhost:9200/_aliases
