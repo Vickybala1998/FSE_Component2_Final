@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tweet_Consumer_kafka", "tweet_Consumer_kafka.csproj", "{35E560A3-308B-4963-A506-C8A7A1D2BB1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35E560A3-308B-4963-A506-C8A7A1D2BB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E560A3-308B-4963-A506-C8A7A1D2BB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E560A3-308B-4963-A506-C8A7A1D2BB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E560A3-308B-4963-A506-C8A7A1D2BB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1257A0CF-A889-4B5A-B560-6D39B4BF4821}
+	EndGlobalSection
+EndGlobal
